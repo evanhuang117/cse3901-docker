@@ -24,5 +24,4 @@ RUN source /root/.bashrc \
     && gem install --no-document rails -v 6.0.3 \
     && rbenv install 2.6.6 \
     && rbenv global 2.6.6
-RUN exec $SHELL
 COPY . .
