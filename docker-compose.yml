@@ -1,0 +1,7 @@
+services:
+  cse3901:
+    image: "cse3901"
+    build: .
+    volumes:
+      - /Users/evanhuang/Documents/cse3901:/code
+    command: /bin/bash 
