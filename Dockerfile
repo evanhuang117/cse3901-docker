@@ -25,5 +25,4 @@ RUN source /root/.bashrc \
     && rbenv install 2.6.6 \
     && rbenv global 2.6.6
 RUN exec $SHELL
-RUN  npm install yarn -g
 COPY . .
