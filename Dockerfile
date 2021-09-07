@@ -17,5 +17,5 @@ RUN  apt-get update && apt-get install -y \
 RUN apt-get install -y nodejs npm \
     && npm install yarn -g 
 RUN source /root/.bashrc \
-    && gem install --no-document rails -v 6.0.3
-COPY . .
+    && gem install --no-document rails -v 6.0.3 \
+    && gem install rubocop
