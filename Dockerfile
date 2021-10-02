@@ -27,5 +27,5 @@ ADD .bashrc /root
 ADD .bash_profile /root
 ADD .bash_aliases /root
 RUN mkdir code
-COPY . /code
+#COPY . /code
 CMD /bin/bash
