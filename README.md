@@ -4,24 +4,25 @@ First off edit the docker compose file to map a folder on your computer to one i
 
 `docker compose up -d`
 
-***To attach to the container in a bash shell***
+Download the docker image
+`docker pull evanhuang117/cse3901-docker`
 
-`docker ps` -> This will output the containers currently running, copy the container id then
+Start the container and attach to it
+`make run`
 
-`docker exec -it 'container id' /bin/bash`
+
+### Manually building/running the docker image
+```
+git clone https://github.com/evanhuang117/cse3901-docker && cd cse3901-docker
+make build-local
+make run-local
+
+docker run -it $(docker build -q .) bash
+``
 
 ***Exit the docker container shell with CTRL-d***
 
-## Manual build steps
-***To rebuild the docker image***
 
-`docker build . -t 'your image name'`
-
-***To start a container with the image***
-
-edit the `docker-compose.yml` and replace the value for `image` with `'your image name'`
-
-Then `docker compose up -d`
 
 
 
