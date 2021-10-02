@@ -13,9 +13,19 @@ RUN node --version
 RUN npm --version
 
 RUN  apt-get update && apt-get install -y \
-    git vim zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev curl wget
+    git vim zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev curl wget tmux
 RUN apt-get install -y nodejs npm \
     && npm install yarn -g 
 RUN source /root/.bashrc \
     && gem install --no-document rails -v 6.0.3 \
-    && gem install rubocop
+    && gem install rubocop \
+    && gem install minitest \
+    && gem install simplecov
+ADD .vimrc /root 
+ADD .tmux.conf /root
+ADD .bashrc /root 
+ADD .bash_profile /root
+ADD .bash_aliases /root
+RUN mkdir code
+COPY . /code
+CMD /bin/bash
